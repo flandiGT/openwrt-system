@@ -10,5 +10,5 @@ galaxy_info:
   #   - 14.07
   categories:
     - system
-dependencies:
-  - { role: openwrt-uci }
+# dependencies:
+#   - { role: openwrt-uci }

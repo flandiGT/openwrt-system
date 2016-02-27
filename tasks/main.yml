@@ -1,27 +1,21 @@
 ---
 - name: set hostname
-  uci: command=set key="hostname" value="{{ hostname }}"
-  with_dict:
-    system
-  when: {{ hostname }} != ''
+  uci: command=set key="system.@system[0].hostname" value={{ hostname }}
+  when: hostname != ''
   notify:
     - uci commit
     - reload system
 
 - name: set timezone
-  uci: command=set key="timezone" value="{{ timezone }}"
-  with_dict:
-    system
-  when: {{ timezone }} != ''
+  uci: command=set key="system.timezone" value="{{ timezone }}"
+  when: timezone != ''
   notify:
     - uci commit
     - reload system
 
 - name: set zonename
-  uci: command=set key="zonename" value="{{ zonename }}"
-  with_dict:
-    system
-  when: {{ zonename }} != ''
+  uci: command=set key="system.zonename" value="{{ zonename }}"
+  when: zonename != ''
   notify:
     - uci commit
     - reload system
