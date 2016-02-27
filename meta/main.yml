@@ -11,4 +11,4 @@ galaxy_info:
   categories:
     - system
 dependencies:
-  - { role: lefant.openwrt-uci }
+  - { role: openwrt-uci }

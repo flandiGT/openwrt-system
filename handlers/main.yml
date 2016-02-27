@@ -1,5 +1,3 @@
 ---
-# handlers file for openwrt-system
 - name: reload system
   raw: /etc/init.d/system reload
-
