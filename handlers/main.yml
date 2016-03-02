@@ -2,5 +2,5 @@
 - name: reload system
   raw: /etc/init.d/system reload
 
-- name: uci commit
-  raw: uci commit
+- name: uci commit system
+  uci: command=commit config=system
