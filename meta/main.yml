@@ -1,8 +1,7 @@
 ---
 galaxy_info:
-  author: Fabian Linzberger
+  author: flandi GT
   description: configure general aspects of your openwrt system.
-  license: BSD
   min_ansible_version: 1.7
   platforms: []
   # - Openwrt
@@ -10,5 +9,5 @@ galaxy_info:
   #   - 14.07
   categories:
     - system
-# dependencies:
-#   - { role: openwrt-uci }
+dependencies:
+  - { role: openwrt-uci }
