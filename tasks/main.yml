@@ -35,7 +35,7 @@
     - reload system
 
 - name: set NTP servers
-  uci: command=set config="system" section="ntp" option="server" value={{ ntp_servers }}
+  uci: command=set_list config="system" section="ntp" option="server" value={{ ntp_servers }}
   when: ntp_servers != ''
   notify:
     - uci commit system
