@@ -19,3 +19,24 @@
   notify:
     - uci commit system
     - reload system
+
+- name: set enable NTP client
+  uci: command=set config="system" section="ntp" option="enabled" value={{ enable_ntp_client | int }}
+  when: enable_ntp_client != ''
+  notify:
+    - uci commit system
+    - reload system
+
+- name: set enable NTP server
+  uci: command=set config="system" section="ntp" option="enable_server" value={{ enable_ntp_server | int }}
+  when: enable_ntp_server != ''
+  notify:
+    - uci commit system
+    - reload system
+
+- name: set NTP servers
+  uci: command=set config="system" section="ntp" option="server" value={{ ntp_servers }}
+  when: ntp_servers != ''
+  notify:
+    - uci commit system
+    - reload system
