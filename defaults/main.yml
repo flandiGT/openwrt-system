@@ -2,3 +2,4 @@
 hostname: ''
 timezone: ''
 zonename: ''
+leds: {}

@@ -40,3 +40,8 @@
   notify:
     - uci commit system
     - reload system
+
+- name: set leds
+  include: set_leds.yml
+  with_dict: "{{leds}}"
+  when: leds != {}

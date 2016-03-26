@@ -1,0 +1,44 @@
+---
+- name: set name
+  uci:
+    command: set
+    config: "system"
+    section: "{{section}}"
+    option: "name"
+    value: "{{name}}"
+    when: name != ''
+  notify:
+    - uci commit system
+
+- name: set sysfs
+  uci:
+    command: set
+    config: "system"
+    section: "{{section}}"
+    option: "sysfs"
+    value: "{{sysfs}}"
+    when: sysfs != ''
+  notify:
+    - uci commit system
+
+- name: set default
+  uci:
+    command: set
+    config: "system"
+    section: "{{section}}"
+    option: "default"
+    value: "{{default}}"
+    when: default != ''
+  notify:
+    - uci commit system
+
+- name: set trigger
+  uci:
+    command: set
+    config: "system"
+    section: "{{section}}"
+    option: "trigger"
+    value: "{{trigger}}"
+    when: trigger != ''
+  notify:
+    - uci commit system
