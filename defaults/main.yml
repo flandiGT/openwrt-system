@@ -2,4 +2,7 @@
 hostname: ''
 timezone: ''
 zonename: ''
+enable_ntp_client: ''
+enable_ntp_server: ''
+ntp_servers: ''
 leds: {}
