@@ -1,20 +1,20 @@
 ---
 - name: set hostname
-  uci: command=set config="system" type="system" option="hostname" value={{ hostname }}
+  uci: command=set config="system" type="system" index=0 option="hostname" value={{ hostname }}
   when: hostname != ''
   notify:
     - uci commit system
     - reload system
 
 - name: set timezone
-  uci: command=set config="system" type="system" option="timezone" value="{{ timezone }}"
+  uci: command=set config="system" type="system" index=0 option="timezone" value="{{ timezone }}"
   when: timezone != ''
   notify:
     - uci commit system
     - reload system
 
 - name: set zonename
-  uci: command=set config="system" type="system" option="zonename" value="{{ zonename }}"
+  uci: command=set config="system" type="system" index=0 option="zonename" value="{{ zonename }}"
   when: zonename != ''
   notify:
     - uci commit system
