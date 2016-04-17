@@ -14,7 +14,7 @@ Role Variables
 | zonename          | text                   | UTC                                                                                         |
 | enable_ntp_client | boolean                | true                                                                                        |
 | enable_ntp_server | boolean                | false                                                                                       |
-| ntp_servers       | text (comma-separated) | 0.openwrt.pool.ntp.org,1.openwrt.pool.ntp.org,2.openwrt.pool.ntp.org,3.openwrt.pool.ntp.org |
+| ntp_servers       | array of strings       | []                                                                                          |
 | leds              | map of objects         | key = led name (like "led_wlan2g" or "led_usb1")                                            |
 
 led object structure:
@@ -39,7 +39,11 @@ Example Playbook
   hostname: OpenWrt
   enable_ntp_client: true
   enable_ntp_server: false
-  ntp_servers: 0.openwrt.pool.ntp.org,1.openwrt.pool.ntp.org,2.openwrt.pool.ntp.org,3.openwrt.pool.ntp.org
+  ntp_servers:
+    - 0.openwrt.pool.ntp.org
+    - 1.openwrt.pool.ntp.org
+    - 2.openwrt.pool.ntp.org
+    - 3.openwrt.pool.ntp.org
   leds:
     led_wlan2g:
       name: WLAN2G
