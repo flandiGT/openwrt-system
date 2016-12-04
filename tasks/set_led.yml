@@ -4,6 +4,7 @@
     command: set
     config: "system"
     section: "{{section}}"
+    type: "led"
     option: "name"
     value: "{{name}}"
     when: name != ''
@@ -15,6 +16,7 @@
     command: set
     config: "system"
     section: "{{section}}"
+    type: "led"
     option: "sysfs"
     value: "{{sysfs}}"
     when: sysfs != ''
@@ -26,6 +28,7 @@
     command: set
     config: "system"
     section: "{{section}}"
+    type: "led"
     option: "default"
     value: "{{default}}"
     when: default != ''
@@ -37,6 +40,7 @@
     command: set
     config: "system"
     section: "{{section}}"
+    type: "led"
     option: "trigger"
     value: "{{trigger}}"
     when: trigger != ''
