@@ -35,7 +35,7 @@
     - reload system
 
 - name: set NTP servers
-  uci: command=set_list config="system" section="ntp" option="server" value={{ ntp_servers | default([]) | join(",") }}
+  uci: command=set_list config="system" section="ntp" option="server" value={{ ntp_servers | default([]) | join(',') }}
   notify:
     - uci commit system
     - reload system
