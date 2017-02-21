@@ -1,8 +1,8 @@
 ---
-hostname: ''
-timezone: ''
-zonename: ''
-enable_ntp_client: ''
-enable_ntp_server: ''
-ntp_servers: ''
+hostname: 'OpenWRT'
+timezone: 'GMT0'
+zonename: 'UTC'
+enable_ntp_client: False
+enable_ntp_server: False
+ntp_servers: []
 leds: {}

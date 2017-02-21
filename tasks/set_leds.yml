@@ -1,9 +1,0 @@
----
-- name: set led configuration
-  include: set_led.yml
-  vars:
-    section: "{{item.key}}"
-    name: "{{item.value.name | default('')}}"
-    sysfs: "{{item.value.sysfs | default('')}}"
-    default: "{{item.value.default | default('')}}"
-    trigger: "{{item.value.trigger | default('')}}"
