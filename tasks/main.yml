@@ -6,8 +6,8 @@
     type: system
     index: 0
     values:
-      hostname: '{{hostname}}'
-      timezone: '{{timezone}}'
+      hostname: '{{ hostname }}'
+      timezone: '{{ timezone }}'
       zonename: '{{ zonename }}'
   notify:
     - uci commit system
@@ -21,7 +21,7 @@
     values:
       enabled: '{{ enable_ntp_client | int }}'
       enable_server: '{{ enable_ntp_server | int }}'
-      server: '{{ntp_servers}}'
+      server: '{{ ntp_servers }}'
   notify:
     - uci commit system
     - reload system
@@ -32,12 +32,11 @@
     config: system
     section: '{{item.key}}'
     values:
-      name: "{{item.value.name | default('')}}"
-      sysfs: "{{item.value.sysfs | default('')}}"
-      default: "{{item.value.default | default('')}}"
-      trigger: "{{item.value.trigger | default('')}}"
-  with_dict: "{{leds}}"
-  when: leds != {}
+      name: "{{ item.value.name | default(None) }}"
+      sysfs: "{{ item.value.sysfs | default(None) }}"
+      default: "{{ item.value.default | default(None) }}"
+      trigger: "{{ item.value.trigger | default(None) }}"
+  with_dict: "{{ leds }}"
   notify:
     - uci commit system
     - reload system
