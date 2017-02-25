@@ -1,12 +1,13 @@
 ---
 galaxy_info:
-  author: flandi GT
+  author: flandiGT
   description: configure general aspects of your openwrt system.
+  license: MIT
   min_ansible_version: 1.7
-  platforms: []
-  # - Openwrt
-  #   versions:
-  #   - 14.07
+  platforms:
+  - name: Openwrt
+    versions:
+    - 15.05
   categories:
     - system
 dependencies:

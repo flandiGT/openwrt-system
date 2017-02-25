@@ -4,6 +4,11 @@ openwrt-system
 configure general aspects of your openwrt system.
 compare: [http://wiki.openwrt.org/doc/uci/system]
 
+Dependencies
+------------
+
+* [openwrt-uci](module https://github.com/flandiGT/openwrt-uci)
+
 Role Variables
 --------------
 
@@ -14,8 +19,8 @@ Role Variables
 | zonename          | text                   | UTC                                                                                         |
 | enable_ntp_client | boolean                | true                                                                                        |
 | enable_ntp_server | boolean                | false                                                                                       |
-| ntp_servers       | array of strings       | []                                                                                          |
-| leds              | map of objects         | key = led name (like "led_wlan2g" or "led_usb1")                                            |
+| ntp_servers       | array of strings       | [] (means: no changes on existing configuration)                                            |
+| leds              | map of objects         | {} (means: no changes on existing configuration)                                            |
 
 led object structure:
 
@@ -25,11 +30,6 @@ led object structure:
 | default        | integer             | LED state before trigger: 1 means ON and 0 means OFF                            |
 | sysfs          | text                | LED device name (like "tp-link:blue:wlan2g" or "tp-link:green:usb1")            |
 | trigger        | text                | trigger, like: phy0rx (see OpenWRT documentation)                               |
-
-Dependencies
-------------
-
-* openwrt-uci
 
 Example Playbook
 ----------------
@@ -57,6 +57,8 @@ Example Playbook
       trigger: phy1rx
 ```
 
-[http://wiki.openwrt.org/doc/uci/system]: http://wiki.openwrt.org/doc/uci/system
-[lefant.openwrt-uci]: https://galaxy.ansible.com/list#/roles/1645
-[https://github.com/lefant/ansible-openwrt/blob/master/openwrt.yml]: https://github.com/lefant/ansible-openwrt/blob/master/openwrt.yml
+Official documentation
+* [OpenWRT Wiki / System configuration](http://wiki.openwrt.org/doc/uci/system)
+
+Got idea from:
+* [lefant/ansible-openwrt-system](https://github.com/lefant/ansible-openwrt-system)
